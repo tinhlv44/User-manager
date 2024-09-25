@@ -10,10 +10,24 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="AddUser" component={AddUserScreen} />
-        <Stack.Screen name="UpdateUser" component={UpdateUserScreen} />
+      <Stack.Navigator initialRouteName="Home"
+        
+      >
+        <Stack.Screen name="Home" component={HomeScreen} 
+          options={{
+            headerShown:false,
+          }} 
+        />
+        <Stack.Screen name="AddUser"  component={AddUserScreen} 
+          options={{
+            title:"Thêm người dùng",
+          }} 
+        />
+        <Stack.Screen name="UpdateUser" component={UpdateUserScreen} 
+          options={{
+            title:"Cập nhật người dùng",
+          }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

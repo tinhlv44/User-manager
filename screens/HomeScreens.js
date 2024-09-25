@@ -1,18 +1,24 @@
 import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import UserList from '../components/UserList';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Button from '../components/Button';
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Button title="Add New User" onPress={() => navigation.navigate('AddUser')} />
+    <SafeAreaView style={styles.container}>
+      <Button title="Thêm người dùng" onPress={() => navigation.navigate('AddUser')} />
       <UserList />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
+  container: { 
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    flex: 1
+  },
 });
 
 export default HomeScreen;
